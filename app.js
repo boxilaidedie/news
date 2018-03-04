@@ -12,6 +12,7 @@ app.use(bodyParser({uploadDir:'./temp'}));
 
 app.engine('html',swig.renderFile);//模板引擎swig
 app.set('views','./views');
+
 app.set('view engine','html');
 swig.setDefaults({cache:false});
 
@@ -30,5 +31,5 @@ app.use('/',require('./router/main'));
 app.use('/news',require('./router/news'));
 app.use('/admin',require('./router/admin'));
 
-app.listen(8000);
+app.listen(8000,'addr:localhost,port:8000');
 

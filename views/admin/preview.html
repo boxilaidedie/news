@@ -1,0 +1,63 @@
+{%extends '../layout2.html'%}
+{%block admin%}
+<style>
+    .breadceumbcolor{
+        color:#e71a19;
+    }
+    img{
+        max-width: 100%;
+        display: block;
+        border-radius: 2px
+    }
+</style>
+<ol class="breadcrumb col-sm-9">
+    <li><a href="/admin/edit" >新闻发布</a></li>
+    <li><a href="/admin/preview" class="breadceumbcolor">新闻预览</a></li>
+
+</ol>
+<div class="col-sm-9">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>标题配图</th>
+                <th>标题</th>
+                <th>发布人</th>
+                <th>类型</th>
+                <th>发布时间</th>
+                <th>操作</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% if rs%}
+        {% for rs in rs%}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td style="width:80px;"><img src="{{rs.titlepic}}" alt=""></td>
+                <td>{{rs.title}}</td>
+                <td>{{rs.username}}</td>
+                <td>{{rs.category}}</td>
+                <td>{{rs.createtime|date('Y-m-d H:i:s',-8*60)}}</td>
+                <td><a href="/admin/delete">删除</a></td>
+            </tr>
+
+        {% endfor%}
+        {%else%}
+        <tr>
+            没有数据
+        </tr>
+        {% endif %}
+
+        </tbody>
+    </table>
+    <nav aria-label="...">
+        <ul class="pager">
+            <li><a href="/admin/preview?page={{countpage-1}}">上一页</a></li>
+            <span>总页数:{{countpage}}</span>/<span>总数:{{count}}</span>/<span>第{{page}}页</span>
+            <li><a href="/admin/preview?page={{countpage+1}}">下一页</a></li>
+        </ul>
+    </nav>
+</div>
+
+{%endblock%}

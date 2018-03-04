@@ -1,0 +1,77 @@
+{%extends '../layout.html'%}
+{%block main%}
+	<div class="container">
+		<div class="col-sm-8">
+			<h1 class="news-title">{{rs.title}}</h1>
+			<div class="news-status">25k阅读 {{rs.createtime|date('Y-m-d H:i:s',-8*60)}} <label class="label label-default">{{rs.category}}</label>
+			</div>
+			<div class="news-content">
+				<div class="hide content">{{rs.content}}</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="side-bar-card">
+				<div class="card-title">相关推荐</div>
+				<div class="card-body ">
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/#eee/fff" alt=""></div>
+					<div class="col-xs-7">
+						<div class="title">国旗护卫队番号将取消</div>
+						<div class="desc">25k阅读 30分钟前发布</div>
+					</div>
+						</div>
+					</div>
+
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/#eee/fff" alt=""></div>
+					<div class="col-xs-7">
+						<div class="title">国旗护卫队番号将取消</div>
+						<div class="desc">25k阅读 30分钟前发布</div>
+					</div>
+						</div>
+					</div>
+
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/#eee/fff" alt=""></div>
+					<div class="col-xs-7">
+						<div class="title">国旗护卫队番号将取消</div>
+						<div class="desc">25k阅读 30分钟前发布</div>
+					</div>
+						</div>
+					</div>
+
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/#eee/fff" alt=""></div>
+					<div class="col-xs-7">
+						<div class="title">国旗护卫队番号将取消</div>
+						<div class="desc">25k阅读 30分钟前发布</div>
+					</div>
+						</div>
+					</div>
+
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/#eee/fff" alt=""></div>
+					<div class="col-xs-7">
+						<div class="title">国旗护卫队番号将取消</div>
+						<div class="desc">25k阅读 30分钟前发布</div>
+					</div>
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+<script>
+	var str=$('.content').text();
+	$('.news-content').append(str)
+</script>
+{%endblock%}

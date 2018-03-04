@@ -1,0 +1,112 @@
+{%extends '../layout.html'%}
+{%block main%}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="list-group side-bar" style="border:1px solid rgba(255,230,220,0.97);">
+					<a href="#" class="list-group-item">综合</a>
+					<a href="#" class="list-group-item">电影</a>
+					<a href="#" class="list-group-item">视频</a>
+					<a href="#" class="list-group-item">热点</a>
+					<a href="#" class="list-group-item">社会新闻</a>
+					<a href="#" class="list-group-item">独家</a>
+					<a href="#" class="list-group-item">新时代</a>
+					<a href="#" class="list-group-item">军事</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="">
+							<img src="/admin/{{rs[0].titlepic}}" alt="">
+							<span style="">{{rs[0].title}}</span>
+						</div>
+						<div class="swiper-slide">
+							<img src="/admin/{{rs[1].titlepic}}" alt="">
+                            <span style="">{{rs[1].title}}</span>
+						</div>
+						<div class="swiper-slide">
+							<img src="/admin/{{rs[2].titlepic}}" alt="">
+                            <span style="">{{rs[2].title}}</span>
+						</div>
+						<div class="swiper-slide">
+							<img src="/admin/{{rs[3].titlepic}}" alt="">
+                            <span style="">{{rs[3].title}}</span>
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+
+					<!-- 如果需要导航按钮 -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+
+				{%for rs in rs%}
+				<div class="new-list clearfix">
+					<div class="col-xs-5" style="overflow: hidden;max-height:120px">
+						<img src="/admin/{{rs.titlepic}}" alt="{{rs.title}}">
+					</div>
+					<div class="col-xs-7">
+						<a href="news?id={{rs.nid}}"><div class="title">{{rs.title}}</div></a>
+						<div class="info">
+						<img class="avatar" src="https://p3.pstatp.com/large/2c6b001dd55cf954a3f6">
+							<span>阅读数:220</span>
+							<span>评论数:220</span>
+							<span>时间：{{rs.createtime|date('Y-m-d H:i:s',-8*60)}}</span>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+				<span style="margin-left:260px"><a href="/?page={{page+1}}">加载更多...</a> </span>
+			</div>
+			<div class="col-sm-3">
+				<div class="search-bar">
+					<input type="text" name="search" class="form-control search">
+				</div>
+				<div class="side-bar-card clearfix">
+					<div class="col-xs-5">
+						<img src="./img/icon1.png" alt="">
+					</div>
+					<div class="col-xs-7">
+						<div class=" text text-title">有害信息举报专区</div>
+						<div class="text text-content">举报电话:12377</div>
+					</div>
+				</div>
+				<div class="side-bar-card">
+					<div class="card-title">24小时热文</div>
+					<div class="card-body">
+						<div class="list">
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							<div class="item">
+								<div class="title">2017年12月27日消息，武警战士在天安门广场下执勤。</div>
+								<div class="desc">15K阅读 1K评论</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{%endblock%}

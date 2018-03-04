@@ -1,0 +1,64 @@
+{%extends '../layout2.html'%}
+{%block admin%}
+<div id="charts" class="col-sm-offset-1 col-sm-8" style="width:600px;height:260px">
+
+</div>
+<input type="hidden" value="{{arr}}">
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('charts'));
+    var senddata=$('input[type=hidden]').val();
+        var dataStrArr=senddata.split(',');
+        var dataArr=[];
+        console.log(dataStrArr)
+        dataStrArr.forEach(function(item,index){
+            console.log(item);
+                dataArr.push(item);
+        });
+        console.log(dataArr);
+    var option = {
+        title: {
+            text: '本周周发稿量',
+            subtext:'真实数据',
+            left:220
+
+        },
+        tooltip:{trigger:'item'},
+        toolbox:{
+            show:'true',
+            feature:{
+                magicType:{show:true,type:['line','bar']},
+                dataView:{show:true},
+                mark:{show:true},
+                saveAsImage:{show:true},
+
+            }
+        },
+        legend: {
+            data:['发布量'],
+            orient:'vertical',
+            x:'left',
+        },
+        xAxis: {
+            data: ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"],
+            type:'category'
+        },
+        yAxis: {},
+
+        series: [{
+            name: '发布量',
+            type: 'line',
+            data:dataArr
+        },{
+            name:'发布量',
+            type:'bar',
+            data:dataArr,
+            markPoint:{data:[{type:'max',name:'最高纪录'},{type:'min',name:'最低'}]},
+            markLine:{data:[{type:'average',name:'平均发布量',normal:{color:'red'}}]}
+        }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+{%endblock%}

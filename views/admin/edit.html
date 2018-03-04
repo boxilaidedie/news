@@ -1,0 +1,85 @@
+{%extends '../layout2.html'%}
+{%block admin%}
+<style>
+   .breadceumbcolor{
+       color:#e71a19;
+   }
+   #editor {
+       overflow:scroll; max-height:300px
+   }
+</style>
+<ol class="breadcrumb col-sm-9">
+    <li><a href="/admin/edit" class="breadceumbcolor">新闻发布</a></li>
+    <li><a href="/admin/preview">新闻预览</a></li>
+
+</ol>
+<form class="col-sm-9" action="/admin/edit" method="post" enctype="multipart/form-data">
+<label>标题</label>
+<input type="text" class="form-control" name="title">
+<label>分类</label>
+<select class="form-control" name="category">
+    <option>新闻</option>
+    <option>娱乐</option>
+</select>
+    <label>封面图片</label>
+    <input type="file" name="files" class="form-control"/>
+    <p></p>
+    <div id="summernote" class="col-sm-9">
+    </div>
+    <textarea cols="90" rows="15" type="text" class="text hide" name="content"></textarea>
+    <button type="submit" name="btn" class="btn btn-default">保存</button>
+</form>
+
+<script>
+    $('#summernote').summernote({
+        height:200,
+        lang: 'zh-CN',
+        placeholder: '请输入文本...',
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontname', 'fontsize', 'color']],
+            ['para', ['ul', 'ol', 'paragraph', 'height']],
+            ['insert', ['table', 'link', 'picture', 'video']],
+            ['help', ['help']]
+        ],
+        callbacks: {
+            onImageUpload: function (files) {
+                var imageData = new FormData();
+                imageData.append("imageData", files[0]);
+                console.log(files[0]);
+                $.ajax({
+                    data: imageData,
+                    type: "POST",
+                    url: "/admin/uploadImage",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (result) {
+                        console.log(result);
+                        if (result.status = "success") {
+                            var imgNode = document.createElement("img");
+                            //读取后台返回的图片url
+                            imgNode.src = result.imageUrl;
+                            $('#summernote').summernote('insertNode', imgNode);
+                        }
+                    },
+                    error: function () {
+                        alert("上传图片失败");
+                    }
+                });
+            }
+        }
+    });
+
+
+
+
+
+   $('.btn').on('click',function(){
+        var content=$('#summernote').summernote('code');
+        $('.text').val(content);
+        console.log( $('.text').val());
+   });
+</script>
+{%endblock%}

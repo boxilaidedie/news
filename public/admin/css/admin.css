@@ -1,0 +1,22 @@
+body{font-family:'冬青黑体简体中文 W3' }
+img{
+    max-width: 100%;
+    display: block;
+    border-radius: 2px
+}
+.toutiao{
+
+    color: #e71a19;
+}
+.push-news{
+    width:640px;
+    height:600px;
+}
+.sider-bar .sider-bar-title{
+    background-color: #e71a19;
+    color:#fff
+}
+.sider-bar .list-group-item:hover{
+    background-color: #e71a19;
+    color:#fff;
+}

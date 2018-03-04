@@ -1,0 +1,25 @@
+{%extends '../layout.html'%}
+{%block main%}
+
+<div class="container container-small">
+	<div class="form">
+		<h2>账户登录</h2>
+		<span class="error" style="color:red;font-size:14px;"></span>
+		<div class="form-group">
+			<label>用户名/手机/邮箱</label>
+			
+			<input type="text" name="username" class="form-control" placeholder="请输入用户名/手机/邮箱">
+			<label>密码</label>
+			<input type="password" name="password" class="form-control" placeholder="请输入密码">
+			
+			<button type="submit" class="btn-block btn-primary">登录</button>
+			
+			<small><a href="/reg">没有账户?点击这里</a></small>
+			<small><a href="/forget">忘记密码</a></small>
+
+		</div>
+	</div>
+</div>
+<script src="./js/login.js"></script>
+{%endblock%}
+

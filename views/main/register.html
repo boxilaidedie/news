@@ -1,0 +1,24 @@
+{%extends '../layout.html'%}
+{%block main%}
+<div class="container container-small">
+	<div class="form">
+		<h2>用户注册</h2>
+		<div class="form-group">
+			<label>手机</label><span class="user-error" style="margin-left: 20px;color: red;font-size: 12px;"></span>
+			<input type="text" name="username" class="form-control" placeholder="手机">
+			<label>密码</label><span class="pwd-error" style="margin-left: 20px;color: red;font-size: 12px;"></span>
+			<input type="password" name="password" class="form-control" placeholder="请输入密码">
+			<label>重复密码</label><span class="repwd-error" style="margin-left: 20px;color: red;font-size: 12px;"></span>
+			<input type="password" name="repassword" class="form-control" placeholder="请输入密码">
+			<label>获取验证码</label><span class="codenum-error" style="margin-left: 20px;color: red;font-size: 12px;"></span>
+			<div class="rows">
+			<input type="text" name="codenum" class="col-sm-8 form-control" placeholder="请输入验证码" style="width:55%">
+			<a href="/codemsg" class="btn btn-success col-sm-4 codemsg" style="width:25%;margin-left:10px">点击获取</a>
+			</div>
+			<button type="submit" class="btn btn-block btn-primary">注册</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="./js/register.js"></script>
+{%endblock%}
+

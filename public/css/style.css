@@ -1,0 +1,146 @@
+body{font-family:'冬青黑体简体中文 W3' }
+img{
+	display: block;
+	max-width:100%;
+	border-radius:2px;
+}
+.navbar-brand{
+	background-image:url(../img/logo.png);
+	width: 100px;
+	height:30px;
+	background-size:100%;
+	margin-top: 10px;
+}
+.side-bar .list-group-item{
+	border:0;
+	border-radius:2px;
+	margin-bottom:4px;
+}
+.side-bar .list-group-item:hover{
+	background-color: #e71a19;
+	color:#fff;
+}
+.new-list{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom:1px solid #999;
+
+}
+.new-list:first-child{
+	padding-top: 0
+}
+.new-list:last-child{
+	border-bottom:0
+}
+.new-list .title{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom:10px;
+}
+.new-list .info{
+	color: #999;
+	font-size: 12px;
+}
+.new-list .info .avatar{
+	display: inline-block;
+	width:16px;
+	height: 16px;
+
+}
+.side-bar-card{
+	background: rgba(0,0,0,0.1);
+	margin-top: 15px;
+	cursor: pointer;
+
+}
+.side-bar-card img{
+	margin-top:10px;
+}
+.side-bar-card .text-title{
+	font-size:24px;
+	font-weight: bold;
+}
+.side-bar-card .text-title{
+	margin-top: 5px;
+}
+.side-bar-card .card-title{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.side-bar-card .card-body .list .item .title{
+	padding-bottom: 15px;
+}
+.side-bar-card .card-title,.side-bar-card .card-body .list .item .title,.side-bar-card .card-body .list .item .desc{
+	padding: 5px 15px;
+}
+.side-bar-card .card-body .list .item:hover{
+	background:rgba(0,0,0,0.05);
+	color: #337ab7
+}
+.side-bar-card .card-body .list .item .title{
+	padding-bottom: 10px;
+}
+.side-bar-card .card-body .list .item .desc{
+	font-size: 12px;
+	color: #999
+}
+.search{
+	background: url(../img/search.png) no-repeat right center;
+	background-size: 12%
+}
+.person-bg{
+	background:#fff
+}
+.person{
+	padding:16px 10px;
+	cursor: pointer;
+}
+.menu{
+	position:relative;
+	z-index:999;
+}
+.mask-menu{
+	position: absolute;
+	top:35px;
+	left:0;
+	width:150px;
+	background:#fff;
+	border:1px solid #eee;
+	display: none;
+}
+.list-menu{
+	padding:5px 40px;
+	color:#000;
+}
+.list-menu a{
+	text-decoration: none;
+	color:#3D3C3D;
+	cursor:pointer;
+}
+.list-menu:first-child{
+	border-bottom:1px solid #eeeeee;
+}
+.list-menu:hover{
+	color:#fff;
+	background:#e71a19
+}
+footer{
+	margin-top: 20px;
+	text-align: center;
+	height: 140px;
+	line-height: 140px;
+	color: #999
+}
+.swiper-container {
+	/*width: 600px;*/
+	height: 300px;
+	border:1px solid #eee
+}
+.swiper-slide{
+	position: relative
+}
+.swiper-slide span{
+	position: absolute;bottom: 20px;left: 10px;
+	color:#fff;font-size:16px;font-weight:bold;
+}

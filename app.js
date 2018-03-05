@@ -31,5 +31,5 @@ app.use('/',require('./router/main'));
 app.use('/news',require('./router/news'));
 app.use('/admin',require('./router/admin'));
 
-app.listen(8000,'addr:192.168.0.106,port:8000');
+app.listen(8000);
 
